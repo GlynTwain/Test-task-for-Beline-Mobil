@@ -15,6 +15,7 @@ class Locators:
 
 class Autorization(BasePage):
     def lol(self):
+        """Взываем к помощи костыля"""
         self.kostil()
 
     def click_enter(self):

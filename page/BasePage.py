@@ -40,6 +40,7 @@ class BasePage:
             return False
 
     def kostil(self):
+        # Не смог избавиться от автоматического логина при входе, сделал костыль
         time.sleep(3)
         if len(self.driver.find_elements_by_xpath(Locators.main_page_profile)) > 0:
             print('Пользователь залогинен')
@@ -49,6 +50,7 @@ class BasePage:
             time.sleep(1)
             self.driver.find_element_by_xpath(Locators.ext_yes).click()
 
+    # Необходимо поправить
     def waiting_element_id(self, id, time):
         """Грубое ожидание элемента"""
 
