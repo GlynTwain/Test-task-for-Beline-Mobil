@@ -1,2 +1,2 @@
 uuid_list = None
-port = 5904
+port = 5906

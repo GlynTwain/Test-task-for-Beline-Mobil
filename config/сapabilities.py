@@ -1,9 +1,9 @@
 class CapsDevice:
-    def __init__(self, uuid: str, port: str):
+    def __init__(self, uuid: str):
         self.desired_capabilities = {
             "udid": str(uuid),  #
             "platformName": "Android",
-            "app": 'builds/beline 4.52.2 .apk',  # можно сделать парсер
+            "app": '/home/glyntwain/Документы/Test-task-for-Beline-Mobil/builds/beline.apk',  # можно сделать парсер
             "noReset": "true",
             "unicodeKeyboard": "true",
             "useNewWDA": "false",
@@ -17,7 +17,7 @@ class CapsDevice:
             'autoGrantPermissions': 'true',
             'resetKeyboard': 'true',
         }
-        self.appium_port = port
+        self.appium_port = '5906'
         self.appium_id = '127.0.0.1'
 
     def get_caps(self) -> dict:
