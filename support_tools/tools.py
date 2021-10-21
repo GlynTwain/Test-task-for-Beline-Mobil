@@ -19,3 +19,9 @@ def get_adb_devices() -> list:
 
     print(f"Подготовлен список устройств : {adb_dev}")
     return adb_dev
+
+
+def get_sms_for_login(login: str) -> str:
+    """Получить код смс для авторизации, по логину"""
+    # Логика работы с API и возможно парсинг
+    pass

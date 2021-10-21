@@ -15,24 +15,24 @@ class BasePage:
 
     def tap_element(self, locator: tuple) -> None:
         """Нажать элемент"""
-        self.waiting_element_id(locator, 5)
-        self.driver.find_element_by_id(locator).click()
+        # self.waiting_element_id(locator, 5)
+        self.driver.find_element(by=locator[0], value=locator[1]).click()
 
     def send_element(self, locator: tuple, text: str):
         """Ввести текст в поле"""
-        self.waiting_element_id(locator, 5)
-        self.driver.find_element(locator).send_keys(text)
+        # self.waiting_element_id(locator, 5)
+        self.driver.find_element(locator[0], locator[1]).send_keys(text)
 
     def send_element_in_element(self, locator1: tuple, locator2: tuple, text: str):
         """Ввести текст в поле"""
-        self.waiting_element_id(locator1, 5)
-        element = self.driver.find_element_by_id(locator1)
-        element = element.find_element_by_id(locator2).send_keys(text)
+        # self.waiting_element_id(locator1, 5)
+        element = self.driver.find_element(locator1[0], locator1[1])
+        element.find_element(locator2[0], locator2[1]).send_keys(text)
 
     def exist_element(self, locator: tuple):
         """Проверка на существование элемента"""
 
-        if len(self.driver.find_elements(locator)) > 0:
+        if len(self.driver.find_elements(locator[0], locator[1])) > 0:
             print('Есть элемент на экране')
             return True
         else:
@@ -49,6 +49,7 @@ class BasePage:
             self.driver.find_element_by_xpath(Locators.profile_page_ext).click()
             time.sleep(1)
             self.driver.find_element_by_xpath(Locators.ext_yes).click()
+            time.sleep(5)
 
     # Необходимо поправить
     def waiting_element_id(self, id, time):
